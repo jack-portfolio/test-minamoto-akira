@@ -1,0 +1,351 @@
+@charset "UTF-8";
+/* =========================
+   PC用
+========================= */
+
+/* メイン 全体 */
+.works-page{
+  max-width:1000px;
+  margin:120px auto;
+  padding:0 30px;
+  color:#FFFFFF;
+  text-shadow:0 2px 6px rgba(0,0,0,0.6);
+}
+ 
+.page-title{
+  text-align:center;
+  font-size:32px;
+  margin-bottom:60px;
+}
+
+.title-main,
+.kana {
+  display: block;
+}
+ 
+/* 作品カード */
+.work-card{
+  display:flex;
+  gap:80px;
+  margin-bottom:200px;
+  align-items:center;
+}
+ 
+/* 漫画画像 */
+.work-image{
+  flex-shrink:0;
+}
+
+.work-image img{
+  width:100%;
+  max-width:335px;
+  height:auto;
+  border-radius:15px;
+  box-sizing:border-box;
+}
+
+/* 作品4の画像に縁をつける */
+.work-card.serialization .work-image img{
+  border:6px solid rgba(182,0,51,0.8);
+}
+
+/* 作品5の画像に縁をつける */
+.work-card.free_book .work-image img{
+  border:6px solid #fff;
+}
+ 
+/* 作品（タイトル） */
+.work-title{
+  font-size:36px;
+  display:inline-block;
+  border-bottom:2px solid #FFFFFF;
+
+  padding-bottom:8px;
+  margin-bottom:12px;
+
+  width:100%;
+  text-align:center;
+}
+
+/* X（Twitter）にて、公開中!だけ大きくする */
+.free-title{
+  font-size:20px;
+  font-weight:700;
+}
+
+/* ふりがな */
+.kana{
+  display:inline;
+  margin-top:4px; 
+  font-size:14px;
+  color:rgba(255,255,255,0.8);
+}
+
+/* あらすじ */
+.work-story{
+  line-height:1.8;
+  margin-bottom:40px;
+  font-size:18px;
+  color:#FFFFFF;
+}
+
+/* 試し読み */
+.trial-reading{
+  font-size:18px;
+  font-weight:700;
+  margin:25px 0 10px;
+
+  display:flex;
+  align-items:center;
+}
+
+.trial-reading::before{
+  content:"📖";
+  font-size:30px;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.7));
+  border-radius:6px;
+  display:inline-block;
+}
+
+.trial-reading::after{
+  content:"";
+  flex:1;
+  height:2px;
+  background:rgba(255,255,255,0.8);
+}
+
+/* =========================
+   ボタン共通
+========================= */
+
+.work-buttons .btn{
+  display:inline-block;
+  padding:10px 18px;
+  margin-left:0;
+
+  background:#000000;
+  color:#fff;
+
+  text-decoration:none;
+  text-align:center;
+  
+  border-radius:8px;
+  margin:6px 12px 0 0;
+
+  font-size:15px;
+  transition:0.2s;
+}
+
+.work-buttons .btn:hover{
+  opacity:0.75;
+}
+
+/* =========================
+   自由帳ボタン
+========================= */
+
+.work-buttons .btn.free-book{
+  background:#FFFFFF;
+  color:#706CAA;
+  font-size:16px;
+  margin:6px 12px 0 0;
+  text-shadow:none;
+}
+
+.work-buttons .btn.free-book:hover{
+  background:#706CAA;
+  color:#FFFFFF;
+}
+
+/* ボタン ここまで */
+
+/* =========================
+   ラベル（目立たせる）
+========================= */
+
+/* NEW - 現在、Palcyにて連載中！ */
+.work-serialization{
+  background: rgba(182,0,51,0.8);
+  color:#fff;
+
+  padding:5px 10px;   /* ← 高さを細くする */
+
+  margin-bottom:35px;
+
+  font-size:18px;     /* ← 少し小さくすると細く見える */
+  line-height:1.4;
+  font-weight:700;
+
+  text-align:center;
+}
+
+/* コミックス第1巻、発売中！ */
+.work-Release{
+  background: rgba(182,0,51,0.8);
+  color:#fff;
+
+  display:block;
+
+  padding:7px 14px;   /* ← 高さを細く */
+
+  margin-top:40px;
+
+  font-size:24px;
+  line-height:1.4;
+  font-weight:700;
+
+  text-align:center;
+}
+
+/* =========================
+   PC用 ここまで
+========================= */
+
+/* =========================
+   タブレット（〜1400px）
+========================= */
+
+@media screen and (max-width:1400px){
+
+  /* カード縦並び */
+  .work-card{
+    align-items:center;
+    text-align:center;
+    flex-direction:column;  /* ← 縦並びに変更 */
+
+    margin-bottom:100px;
+    gap:50px;
+
+    justify-content:center;
+    box-sizing:border-box;
+  }
+
+  .work-info{
+    flex:1;
+    max-width:500px;
+    text-align:left;
+  }
+  
+  /* 画像 */
+  .work-image img{
+    width:260px;
+    height:auto;
+    box-sizing:border-box;
+  }
+  
+  /* タイトル */
+  .work-title{
+    font-size:24px;
+    border-bottom:2px solid #fff;
+    padding-bottom:6px;
+
+    display:block;
+    width:100%;
+
+    text-align:center;
+  }
+
+  .kana{
+    display:block;
+    width:100%;
+  }
+  
+  /* あらすじ：中央配置＋左揃え */
+  .work-story{
+    text-align:left;
+    max-width:100%;
+    line-height:1.9;
+
+    padding-bottom: 20px;
+
+    font-size:18px;
+    letter-spacing:0.03em;
+    width:100%;
+  }
+
+  /* X（Twitter）にて、公開中!  */
+    .free-title{
+    display:block;
+    font-size:20px;
+    font-weight:700;
+  }
+
+  /* コミックス第1巻、発売中！ */
+  .work-Release{
+    max-width:100%;
+    box-sizing:border-box;
+  }
+
+}
+
+/* =========================
+   タブレットここまで
+========================= */
+
+/* =========================
+   スマホ（375px）
+========================= */
+
+@media screen and (max-width:375px){
+
+  .work-card{
+    align-items:center;
+    text-align:center;
+    flex-direction:column; /* 統一！ */
+
+    margin-bottom:80px;
+
+    gap:40px;
+    justify-content:center;
+    box-sizing:border-box;
+  }
+
+  .work-info{
+    flex:1;
+    max-width:100%;
+    text-align:left;
+  }
+  
+  .work-image img{
+    width:180px; /* スマホなので少し小さく */
+    height:auto;
+  }
+  
+  .work-story{
+    text-align:left;
+    max-width:100%;
+    line-height:1.8;
+    padding-bottom:20px;
+    font-size:14px;
+    letter-spacing:0.03em;
+    width:100%;
+  }
+
+  /* =========================
+   ラベル（小さくする）
+  ========================= */
+
+  /* NEW - 現在、Palcyにて連載中！ */
+  .work-serialization{
+    padding:7px 30px;
+    font-size:14px;
+  }
+
+  /* コミックス第1巻、発売中！ */
+  .work-Release{
+    display:block;
+
+    width:100%;
+    max-width:100%;
+
+    padding:6px 10px;   /* ← 横を小さく */
+    font-size:14px;     /* ← 少し小さく */
+
+    box-sizing:border-box;
+  }
+
+}
+
+/* =========================
+   スマホ ここまで
+========================= */
