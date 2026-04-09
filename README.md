@@ -1,1 +1,0 @@
-# test-minamoto-akira
